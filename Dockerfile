@@ -1,4 +1,7 @@
-FROM ubuntu:latest
-LABEL authors="Łukasz"
+FROM openjdk:17
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY target/OneceAgainDev.jar /app/oneceagaindev.jar
+
+CMD ["java", "-jar", "oneceagaindev.jar"]
